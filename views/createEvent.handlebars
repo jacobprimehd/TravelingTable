@@ -1,0 +1,61 @@
+<div class="container">
+    <!-- row 1 -->
+    <div class="row">
+        <!-- col 1 -->
+        <div class="col-sm">
+            <div class="card">
+                <h5 class="card-header">Host Info {{#each firstName}}</h5>
+                <div class="card-body" style="height: 280px;">
+                    <p>State: {{#each city}}</p>
+                    <p>Country: {{#each country}}</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!-- col 2 -->
+        <div class="col-sm">
+            <div class="card">
+                <h5 class="card-header">Event Info</h5>
+                <div class="card-body" style="height: 280px;">
+                    <form>
+                        <div class="form-group">
+                            <label for="InputDate">Date</label>
+                            <input type="date" class="form-control" id="InputDate" aria-describedby="Date"
+                                placeholder="Enter DD/MM/YYYY">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputTime">Time</label>
+                            <input type="time" class="form-control" id="InputTime" aria-describedby="Time"
+                                placeholder="Enter HH:MM ">
+                        </div>
+                        <div class="form-group">
+                            <label for="InputGuest">Guests</label>
+                            <input type="number" class="form-control" id="InputGuest" aria-describedby="Guest">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- row 2 -->
+    <div class="row mt-5">
+        <div class="col-sm">
+            <div class="card">
+                <h5 class="card-header">My Menu</h5>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="FormControlTextarea">Starter, Main, Dessert</label>
+                        <textarea class="form-control" id="FormControlTextarea" rows=""
+                            style="height: 200px;"></textarea>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-2">
+            <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</div>
