@@ -5,23 +5,18 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     res.render("index");
   });
-  // app.get("/", function (req, res) {
-  //     res.render("registration"
-  // )});
-
-  // app.get("/", function (req, res) {
-  //   res.render("login"
-  //   )
-  // });
-  // // Load example page and pass in an example by id
-  // app.get("/example/:id", function(req, res) {
-  //   db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.render("example", {
-  //       example: dbExample
-  //     });
-  //   });
-  // });
-
+  app.get("/create", function (req, res) {
+      res.render("createEvent");
+  });
+  app.get("/event", function (req,res){
+    res.render("event");
+  });
+  app.get("/login", function(req,res){
+    res.render("login");
+  });
+  app.get("/register", function(req,res){
+    res.render("registration");
+  })
   
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
