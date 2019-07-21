@@ -7,7 +7,6 @@ module.exports = function(app) {
   app.post("/register", function(req,res){
     console.log(req.body)
     db.User.create(req.body).then(result=>{
-      console.log("account made!")
       res.json(result)
     });
   });
