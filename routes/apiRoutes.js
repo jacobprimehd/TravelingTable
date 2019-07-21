@@ -1,8 +1,12 @@
 var db = require("../models");  
 var Sequelize = require("sequelize");
+var passport = require("../config/passport");
 
 module.exports = function(app) {
   // Get all examples
+  app.post("/login", passport.authenticate("local"), function(req, res) {
+    res.json(req.user);
+  });
 
   app.post("/register", function(req,res){
     console.log(req.body)
@@ -11,17 +15,4 @@ module.exports = function(app) {
     });
   });
 
-  // // Create a new example
-  // app.post("/api/examples", function(req, res) {
-  //   db.Example.create(req.body).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
-  // // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
 };
