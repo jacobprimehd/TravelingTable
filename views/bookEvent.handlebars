@@ -4,10 +4,10 @@
             <!-- col 1 -->
             <div class="col-sm">
                 <div class="card">
-                    <h5 class="card-header">Host Info {{#each firstName}}</h5>
+                    <h5 class="card-header">Host Info {{firstName}}</h5>
                     <div class="card-body" style="height: 280px;">
-                        <p>State {{#each city}}</p>
-                        <p>Country {{#each country}}</p>
+                        <p>State {{city}}</p>
+                        <p>Country {{country}}</p>
                         <p></p>
                     </div>
                 </div>
@@ -19,16 +19,16 @@
                     <div class="card-body" style="height: 280px;">
                         <form>
                             <div class="form-group">
-                                <label for="InputDate">Date {{#each eventDate}}</label>
+                                <label for="InputDate">Date {{eventDate}}</label>
                             </div>
                             <div class="form-group">
-                                <label for="InputTime">Time {{#each eventTime}}</label>
+                                <label for="InputTime">Time {{eventTime}}</label>
                             </div>
                             <div class="form-group">
-                                <label for="InputCost">${{#each cost}} per guest</label>
+                                <label for="InputCost">${{cost}} per guest</label>
                             </div>
                             <div class="form-group">
-                                <label for="InputNumGuests">Guests {{#each cost}}</label>
+                                <label for="InputNumGuests">Guests {{Guest}}</label>
                                 <input type="InputNumGuests" class="form-control" id="InputGuest" aria-describedby="Guest">
                             </div>
                         </form>
@@ -42,7 +42,7 @@
                 <div class="card">
                     <h5 class="card-header">My Menu</h5>
                     <div class="card-body">
-                        <p class="card-text">menu</p>
+                        <p class="card-text">{{eventMenu}}</p>
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 <div class="card">
                     <h5 class="card-header">Host Bio</h5>
                     <div class="card-body">
-                        <p class="card-text">host </p>
+                        <p class="card-text">{{Bio}}</p>
                     </div>
                 </div>
             </div>

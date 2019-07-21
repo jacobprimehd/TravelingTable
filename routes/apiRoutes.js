@@ -1,9 +1,15 @@
-var db = require("../models");
+var db = require("../models");  
+var Sequelize = require("sequelize");
 
 module.exports = function(app) {
   // Get all examples
-  app.get("/", function(req, res) {
-    res.render("index");
+
+  app.post("/register", function(req,res){
+    console.log(req.body)
+    db.User.create(req.body).then(result=>{
+      console.log("account made!")
+      res.json(result)
+    });
   });
 
   // // Create a new example
