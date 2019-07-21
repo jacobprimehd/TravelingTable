@@ -12,7 +12,11 @@ body {
   overflow-y: scroll;
 overflow-x: hidden;
 }
-
+#eventCreation{
+  width: 100vw;
+  height: 100vh;
+  font-size: 250%;
+}
 body, input[text], button {
   color: rgb(40, 40, 40);
   font-family: Cambria, Georgia;
@@ -203,8 +207,8 @@ hr {
   text-transform: uppercase;
   letter-spacing: 6px;
   font-size: 15px;
-  text-shadow: #CB3438;
-  color: #fff;
+  text-shadow: white;
+  color: black;
   margin: 0;
   position: relative;
   top: 35%;
@@ -542,5 +546,10 @@ tr:nth-child(even) {
   font-weight: bold;
   background-color: rgb(198, 58, 63);
   color: #ffffff;
+}
+
+#frontTitle{
+  color: white;
+  text-shadow: 3px 3px black;
 }
 
