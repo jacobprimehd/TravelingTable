@@ -28,6 +28,15 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
         }
     })
+    Event.associate = function(models) {
+        // We're saying that a Post should belong to an Author
+        // A Post can't be created without an Author due to the foreign key constraint
+        Event.belongsTo(models.User, {
+          foreignKey: {
+            allowNull: false
+          }
+        });
+      };
     return Event;
 }
 //seperate by commas and return commas. to query list of guest 1/6 Iman
