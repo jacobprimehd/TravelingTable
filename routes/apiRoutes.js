@@ -10,14 +10,17 @@ module.exports = function(app) {
   });
 
   app.post("/register", function(req,res){
-    console.log(req.body)
     db.User.create(req.body).then(result=>{
-
       res.render("login")
     });
   });
   app.get("/api/accounts", function(req,res){
     db.User.findAll({}).then(result=>{
+      res.json(result)
+    })
+  })
+  app.get("/api/events", function(req,res){
+    db.Event.findAll({}).then(result=>{
       res.json(result)
     })
   })

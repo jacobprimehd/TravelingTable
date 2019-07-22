@@ -3,8 +3,7 @@ var passport = require("passport");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 module.exports = function(app) {
   // Load index page
-  app.get("/", isAuthenticated, function(req, res) {
-    console.log(req.user)
+  app.get("/", function(req, res) {
     res.render("index");
   });
   app.get("/create", function (req, res) {
