@@ -1,64 +1,28 @@
 <div class="container">
-    <!-- row 1 -->
-    <div class="row">
-        <!-- col 1 -->
-        <div class="col-sm">
-            <div class="card">
-                <h5 class="card-header">Host Info {{ firstName}}</h5>
-                <div class="card-body" style="height: 280px;">
-                    <p>State {{ city}}</p>
-                    <p>Country {{ country}}</p>
-                    <p></p>
-                </div>
+    <div class="container">
+        <div class="col-sm-6 col-sm-offset-3 mt-5">
+            <h1>Book a Meal</h1>
+            <br>
+            <div class="card-body">
+                <h5>Host {{frirstName}}</h3>
+                <h5>State {{state}}</h4>
+                <h5>Country {{country}}</h4>
+                <h5>Host Bio</h5>
+                <p>{{bio}}</p>
+                <br>
+                <form>
+                    <p><strong>Date</strong> {{eventDate}}</p>
+                    <p><strong>Time</strong> {{eventTime}}</p>
+                    <p><strong>$ {{eventCost}} per guest</strong></p>
+                    <div class="form-group">
+                        <p><strong>Host can accomodate {{eventGuest}} guests</strong></p>
+                        <input type="number" class="form-control" id="InputGuest" aria-describedby="Guest">
+                    </div>
+                    <p><strong>Menu</strong></p>
+                    <p>{{eventMenu}}</p>
+                    <button type="submit" value="Submit" class="btn btn-primary">Book</button>
+                </form>
             </div>
-        </div>
-        <!-- col 2 -->
-        <div class="col-sm">
-            <div class="card">
-                <h5 class="card-header">Event Info</h5>
-                <div class="card-body" style="height: 280px;">
-                    <form>
-                        <div class="form-group">
-                            <label for="InputDate">Date {{ eventDate}}</label>
-
-                        </div>
-                        <div class="form-group">
-                            <label for="InputTime">Time {{ eventTime}}</label>
-
-                        </div>
-                        <div class="form-group">
-                            <label for="InputGuest">Guests {{ event }}</label>
-                            <input type="number" class="form-control" id="InputGuest" aria-describedby="Guest">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- row 2 -->
-    <div class="row mt-5">
-        <div class="col-sm">
-            <div class="card">
-                <h5 class="card-header">My Menu</h5>
-                <div class="card-body">
-                    <p class="card-text">{{ eventMenu}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-5">
-        <div class="col-sm">
-            <div class="card">
-                <h5 class="card-header">Host Bio</h5>
-                <div class="card-body">
-                    <p class="card-text">{{ eventMenu}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-2">
-            <button type="submit" value="Submit" class="btn btn-primary">Book</button>
         </div>
     </div>
 </div>
