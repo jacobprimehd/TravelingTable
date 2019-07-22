@@ -48,9 +48,11 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   User.associate = function(models) {
-    User.hasMany(models.Event, {
-      onDelete: "cascade"
-    });
+    User.belongsToMany(models.Event,{
+      as: "guests",
+      through: "guestParty",
+      foreignKey: "UserId"
+    })
   };
   
   // Creating a custom method for our User model. 

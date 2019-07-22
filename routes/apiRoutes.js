@@ -10,6 +10,13 @@ module.exports = function(app) {
         failureRedirect: "*"
     }
 ));
+app.post("/create", function(req,res){
+  console.log(req.body)
+  db.Event.create(req.body).then(result=>{
+    console.log(result);
+    window.location.replace("/");
+  })
+})
 
   app.post("/register", function(req,res){
     db.User.create(req.body).then(result=>{

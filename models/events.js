@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Event = sequelize.define("Event", {
-        Bio: {
+        bio: {
             type: DataTypes.STRING,
             allowNull: false
         },
@@ -16,12 +16,12 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.DATE,
             allowNull: false
         },
-        host: {
-            type: DataTypes.INTEGER, // hosts ID associate
-            allowNull: false
-        },
         limitGuest: {
             type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        guestCost:{
+            type: DataTypes.FLOAT,
             allowNull: false
         },
         guest: {
@@ -29,12 +29,11 @@ module.exports = function(sequelize, DataTypes) {
         }
     })
     Event.associate = function(models) {
-        // We're saying that a Post should belong to an Author
-        // A Post can't be created without an Author due to the foreign key constraint
-        Event.belongsTo(models.User, {
-          foreignKey: {
-            allowNull: false
-          }
+
+        Event.belongsToMany(models.User, {
+            as: "guests",
+            through: "guestParty",
+            foreignKey: "UserId"
         });
       };
     return Event;

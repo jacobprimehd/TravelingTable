@@ -4,36 +4,41 @@
         <h5>Let us get started by creating a meal</h3>
             <br>
             <div class="card-body">
-                <form>
+                <form action="/create" method="post" id="form.signup">
+                    <div class="form-group">
+                        <label for="InputTitle">Title</label>
+                        <input type="text" class="form-control" placeholder="title" name="title" id="eventTitle">
+                    </div>
                     <div class="form-group">
                         <label for="InputDate">Date</label>
                         <input type="date" class="form-control" id="InputDate" aria-describedby="Date"
-                            placeholder="Enter DD/MM/YYYY">
+                            placeholder="Enter DD/MM/YYYY" name="date">
                     </div>
                     <div class="form-group">
                         <label for="InputTime">Time</label>
                         <input type="time" class="form-control" id="InputTime" aria-describedby="Time"
-                            placeholder="Enter HH:MM ">
+                            placeholder="Enter HH:MM " name="time">
                     </div>
                     <div class="form-group">
                         <label for="InputGuest">Guests</label>
-                        <input type="number" class="form-control" id="InputGuest" aria-describedby="Guest">
+                        <input type="number" class="form-control" id="InputGuest" aria-describedby="Guest" name="limitGuest">
                     </div>
-                    ​<label for="InputCost">Cost per guest</label>
                     <div class="form-group">
+                    ​<label for="InputCost">Cost per guest</label>
                         <div class="input-group-prepend">
                             <span class="input-group-text">$</span>
                         </div>
                         <input type="number" class="form-control" id="InputCost"
-                            aria-label="Amount (to the nearest dollar)">
+                            aria-label="Amount (to the nearest dollar)" name="guestCost">
                     </div>
                     <div class="form-group">
                         <label for="FormControlTextarea">Menu</label>
                         <textarea class="form-control" id="FormControlTextarea" rows=""
-                            placeholder="Enter your menu (starter, main, dessert, etc.)"></textarea>
+                            placeholder="Enter your menu (starter, main, dessert, etc.)" name="bio"></textarea>
                     </div>
                     <button type="submit" value="Submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
     </div>
 </div>
+{{!-- <script src="/js/createEvent.js"></script> --}}
