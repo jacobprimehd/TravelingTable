@@ -4,10 +4,12 @@ var passport = require("../config/passport");
 
 module.exports = function(app) {
   // Get all examples
-  app.post("/login", passport.authenticate("local"), function(req, res) {
-    var userValue = req.user.dataValues
-    res.render("index",userValue)
-  });
+  app.post("/login", passport.authenticate(
+    "local", {
+        successRedirect: "/",
+        failureRedirect: "*"
+    }
+));
 
   app.post("/register", function(req,res){
     db.User.create(req.body).then(result=>{
